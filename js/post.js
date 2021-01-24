@@ -40,7 +40,7 @@ postFormulaire.addEventListener('submit', function(e){
 	.then(response => {
 		response.json()
 		.then(response => {
-
+			document.querySelector("#message").value = "";
 			actualisePost();
 			
 		})
