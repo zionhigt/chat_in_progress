@@ -1,0 +1,99 @@
+form
+{
+	text-align: center;
+	font-family: sans-serif;
+	margin: 0 auto;
+
+	&.doPost
+	{
+		position: fixed;
+		bottom: 20px;
+		left: 3%;
+		width: 90%;
+		margin: auto;
+		height: 22vh;
+		z-index: 4;
+
+		& .btn
+		{
+			margin-top: 5px;
+		}
+
+		& input
+		{
+			border-radius: 20px;
+			border: 2px solid rgba(0, 0, 0, 0.5);
+		}
+	}
+	& #email, & #password, & #name
+	{
+		width: 100%;
+		height: 30px;
+		border-radius: 30px;
+		margin-top: 20px;
+		border: 2px solid rgba(0, 0, 0, 0.3);
+	}
+	& #message
+	{
+		width: 100%;
+		height: 100px;
+	}
+
+	& label
+	{
+		margin-top: 50px;
+		display: flex;
+		justify-content: flex-start;
+		border-radius: 30px;
+		box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.3);
+
+
+		&:before
+		{
+			margin-right: 8px;
+			content: attr(data-content);
+			font-size: 12px;
+			display: block;
+			padding: 2px 0;
+			width: 5%;
+			color: transparent;
+			height: 20px;
+			border-radius: 30px 0 0 30px;
+			background-color: blue;
+			transition: width 0.6s, color 0.2s 0.3s;
+			white-space: nowrap;
+		}
+
+		&:hover::before
+		{
+			width: 60%;
+			color: white;
+		}
+
+
+	}
+
+	
+	& input:focus + label::before
+	{
+		width: 60%;
+		color: white;
+
+	}
+	& input:not(:focus):invalid + label::before
+	{
+		background-color: lighten(red, 20%);
+	}
+
+	& input:valid + label::before
+	{
+		background-color: lighten(green, 20%);
+	}
+
+}
+
+.form__group
+{
+	display: flex;
+	flex-direction: column-reverse;
+}

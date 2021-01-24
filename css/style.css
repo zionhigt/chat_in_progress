@@ -1,0 +1,207 @@
+.main_wrapper {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  max-width: 600px;
+  min-width: 200px;
+  width: auto;
+  height: 90vh;
+  margin: 0 auto;
+  padding: 0 3px;
+  position: relative;
+}
+.main_wrapper #postContainer {
+  padding: 10px;
+  height: 70vh;
+  overflow-y: scroll;
+  background-color: #f1f1f1;
+}
+
+form {
+  text-align: center;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+form.doPost {
+  position: fixed;
+  bottom: 20px;
+  left: 3%;
+  width: 90%;
+  margin: auto;
+  height: 22vh;
+  z-index: 4;
+}
+form.doPost .btn {
+  margin-top: 5px;
+}
+form.doPost input {
+  border-radius: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+form #email, form #password, form #name {
+  width: 100%;
+  height: 30px;
+  border-radius: 30px;
+  margin-top: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+form #message {
+  width: 100%;
+  height: 100px;
+}
+form label {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 30px;
+  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+form label:before {
+  margin-right: 8px;
+  content: attr(data-content);
+  font-size: 12px;
+  display: block;
+  padding: 2px 0;
+  width: 5%;
+  color: transparent;
+  height: 20px;
+  border-radius: 30px 0 0 30px;
+  background-color: blue;
+  transition: width 0.6s, color 0.2s 0.3s;
+  white-space: nowrap;
+}
+form label:hover::before {
+  width: 60%;
+  color: white;
+}
+form input:focus + label::before {
+  width: 60%;
+  color: white;
+}
+form input:not(:focus):invalid + label::before {
+  background-color: #ff6666;
+}
+form input:valid + label::before {
+  background-color: #00e600;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.btn {
+  font-family: sans-serif;
+  background-color: blue;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  width: 150px;
+  height: 50px;
+  color: white;
+  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.3);
+  margin-top: 50px;
+  border-radius: 50px;
+}
+.btn:hover {
+  background-color: #000033;
+}
+
+.singup__link {
+  margin-top: 20px;
+}
+.singup__link a {
+  text-decoration: none;
+  color: blue;
+}
+.singup__link a:hover {
+  color: black;
+}
+
+.post {
+  font-family: sans-serif;
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+.post__header, .post__body, .post__footer {
+  width: auto;
+}
+.post__header {
+  width: 100%;
+  position: relative;
+}
+.post__header--by {
+  font-size: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  border-bottom-left-radius: 10px;
+  max-width: 200px;
+  width: auto;
+  margin: auto auto 2px 5px;
+  position: relative;
+  color: rgba(0, 0, 0, 0.6);
+}
+.post__header--by.me {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 30px;
+  border-bottom-right-radius: 10px;
+  justify-self: flex-end;
+}
+.post__body {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  text-align: left;
+}
+.post__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 50px;
+  position: relative;
+}
+.post__footer--doLike, .post__footer--doDislike {
+  width: 50%;
+  height: 30px;
+  display: flex;
+  margin: auto;
+}
+.post__footer--doLike a, .post__footer--doDislike a {
+  position: relative;
+  width: 50%;
+  z-index: 3;
+}
+.post__footer--doLike i, .post__footer--doDislike i {
+  position: absolute;
+  bottom: 0;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.post__footer--doLike i.ILikeIt, .post__footer--doDislike i.ILikeIt {
+  color: green;
+}
+.post__footer--doLike i.IDislikeIt, .post__footer--doDislike i.IDislikeIt {
+  color: red;
+}
+.post__footer--doLike p, .post__footer--doDislike p {
+  color: grey;
+}
+.post__footer--doLike i {
+  margin-left: 10px;
+}
+.post__footer--time {
+  position: absolute;
+  top: -6px;
+  right: 8px;
+  font-size: 12px;
+  color: grey;
+}
+
+/*# sourceMappingURL=style.css.map */

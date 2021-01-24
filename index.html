@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Chat</title>
+</head>
+<body>
+	<main>
+		<div class="main_wrapper">
+			<form action="https://chat-in-progress.herokuapp.com/api/auth/login" method="POST" name="login" id="login">
+				<div class="form__group">
+
+					<input type="text" id="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+"/>
+					<label data-content="utilisateur@email.com" for="email" name="email">email</label>
+					
+				</div>
+				<div class="form__group">
+
+					<input type="password" id="password" required pattern="[^@\s]{6,16}"/>
+					<label data-content="Faible sécurité ! (min. 6 caractères)" for="password" name="password">password</label>
+					
+				</div>
+				<input class="btn" type="submit" value="Se connecter"/>
+			</form>
+			<div class="singup__link"><a href="./singup.html">S'inscrire</a></div>
+		</div>
+	</main>
+	<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<title>Salon de discussions</title>
+</head>
+<body>
+	<main>
+		<div class="main_wrapper">
+
+			<div id="postContainer">
+
+			</div>
+			
+			<form class="doPost" action="https://chat-in-progress.herokuapp.com/api/post" method="post" name="postman" id="postman">
+				<input type="text" id="message" placeholder="Ecrivez quelque chose ..."/>
+				<input class="btn" type="submit" value="Publier"/>
+			</form>
+		</div>
+	</main>
+
+
+	<template id="cart">
+		<div class="post">
+			<div class="post__header">
+				<h3 class="post__header--by"></h3>
+			</div>
+			<div class="post__body">
+				<div name="" id="" cols="30" rows="10" class="post__body--message">
+					
+				</div>
+			</div>
+			<div class="post__footer">
+				<div class="post__footer--doLike">
+					<a href="https://chat-in-progress.herokuapp.com/api/post/like/"><i class="fas fa-thumbs-up"></i></a>
+					<p class="post__footer--likeCount">0</p>
+				</div>
+				<div class="post__footer--doDislike">
+					<a href="https://chat-in-progress.herokuapp.com/api/post/dislike/"><i class="fas fa-thumbs-down"></i></a>
+					<p class="post__footer--disLikeCount">0</p>
+				</div>
+				<p class="post__footer--time"></p>
+			</div>
+		</div>
+	</template>
+	<script type="text/javascript" src="./js/post.js"></script>
+</body>
+</html>
+

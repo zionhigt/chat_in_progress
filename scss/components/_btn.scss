@@ -1,0 +1,18 @@
+.btn
+{
+	font-family: sans-serif;
+	background-color: blue;
+	border: 2px solid rgba(0, 0, 0, 0.3);
+	width: 150px;
+	height: 50px;
+	color: white;
+	box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.30);
+	margin-top: 50px;
+	border-radius: 50px;
+
+	&:hover
+	{
+		background-color: darken(blue, 40%);
+		
+	}
+}
