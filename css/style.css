@@ -16,6 +16,10 @@
   background-color: #f1f1f1;
 }
 
+main {
+  height: 100vh;
+}
+
 form {
   text-align: center;
   font-family: sans-serif;
@@ -27,7 +31,8 @@ form.doPost {
   left: 3%;
   width: 90%;
   margin: auto;
-  height: 22vh;
+  max-height: 22vh;
+  height: auto;
   z-index: 4;
 }
 form.doPost .btn {
