@@ -12,22 +12,10 @@
 
 	#postContainer
 	{
-		height: 50vh;
 		padding:10px;
+		height: 70vh;
 		overflow-y: scroll;
 		background-color: #f1f1f1;
 
-	}
-}
-
-@media all and (min-width: 400px)
-{
-	.main_wrapper
-	{
-		#postContainer
-		{
-			height: 70vh;
-
-		}
 	}
 }
