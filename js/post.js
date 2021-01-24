@@ -64,6 +64,8 @@ const show = posts => {
 
 const likingCallBack =  e => {
 	e.preventDefault();
+	const stats = e.target.parentNode.href.split("/")[5];
+	thumbChangeClass(e.target, stats);
 	bodyRequest = {
 		userId: sessionStorage.getItem('userId')
 	}
@@ -88,6 +90,22 @@ const likingCallBack =  e => {
 
 }
 
+const thumbChangeClass = (thumb, state) => {
+	switch(state)
+	{
+		case "like":
+			thumb.classList.remove("IDislikeIt");
+			thumb.classList.add("ILikeIt");
+			break;
+		case "dislike":
+			thumb.classList.remove("ILikeIt");
+			thumb.classList.add("IDislikeIt");
+			break;
+		default:
+			thumb.classList.remove("ILikeIt", "IDislikeIt");
+			break;
+	}
+};
 const getCartTemplate = data => {
 	const date = new Date();
 	const template = document.getElementById("cart");
@@ -104,7 +122,7 @@ const getCartTemplate = data => {
 	const thumbUp = cloneTemplate.querySelector(".post__footer--doLike i");
 	if(data.likers.indexOf(sessionStorage.getItem("userId")) != -1)
 	{
-		thumbUp.classList.add("ILikeIt");
+		thumbChangeClass(thumbUp, "like");
 	}
 	const like = cloneTemplate.querySelector(".post__footer--doLike a");
 	like.href = like.href + data._id;
@@ -114,7 +132,7 @@ const getCartTemplate = data => {
 	const thumbDown = cloneTemplate.querySelector(".post__footer--doDislike i");
 	if(data.haters.indexOf(sessionStorage.getItem("userId")) != -1)
 	{
-		thumbDown.classList.add("IDislikeIt");
+		thumbChangeClass(thumbDown, "dislike");
 	}
 	const doDislike = cloneTemplate.querySelector(".post__footer--doDislike a");
 	doDislike.href = doDislike.href + data._id;
